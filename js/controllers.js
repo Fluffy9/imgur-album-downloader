@@ -24,6 +24,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
             image.selected = true;
         });
         $scope.preserveFileOrder = true;
+        $scope.download();
     });
 
     $scope.update = function (albumid) {
