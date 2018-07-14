@@ -20,6 +20,8 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         { headers: { Authorization: 'Client-ID 9a87b414599044c' } }
     ).success(function (data) {
         $scope.album = data.data;
+        $scope.select_all = select_all;
+        $scope.download = download;
     });
 
     $scope.update = function (albumid) {
@@ -77,8 +79,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         });
     };
 }
-    $scope.select_all = select_all;
-    $scope.download = download;
+
 function LandingCtrl($scope, $location, $window) {
     $scope.$on('$viewContentLoaded', function (event) {
         $window._gaq.push(['_trackPageview', $location.path()]);
