@@ -4,7 +4,7 @@
             <div class="container">
                 <form class="form-inline navbar-form">
                     <a href="#/" class="brand">Imgur Album Downloader</a>
-                    <button class="btn" ng-click="select_all()">
+                    <button id="select_all" class="btn" ng-click="select_all()">
                         Select All</button>
                     <div style="margin-left:10px; display:inline-block">
                         <input id="cbxFileOrder" type="checkbox" ng-model="preserveFileOrder" />
@@ -57,3 +57,8 @@
         </div>
     </div>
 </div>
+<script>
+$timeout(function(){
+    angular.element(document.getElementById('select_all')).trigger('click');
+})
+</script>
