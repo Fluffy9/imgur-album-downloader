@@ -96,4 +96,9 @@ function LandingCtrl($scope, $location, $window) {
     $scope.update = function (albumid) {
         $location.path('/' + $scope.albumid);
     };
+    $scope.select_all = function () {
+        $scope.album.images.forEach(function (image) {
+            image.selected = true;
+        });
+    };
 };
