@@ -69,7 +69,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
                     $scope.$apply(function ($scope) {
                         $scope.downloaded += 1;
                         $scope.progress = 'progress';
-                        parent.postMessage( $scope.downloaded + "/" + scope.to_download.length,"*");
+                        parent.postMessage( $scope.downloaded + "/" + $scope.to_download.length,"*");
                         if ($scope.downloaded == $scope.to_download.length) {
                             $scope.progress = 'progress active striped';
                             var blob = zip.generate({ type: 'blob' });
