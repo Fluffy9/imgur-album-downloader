@@ -20,6 +20,9 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         { headers: { Authorization: 'Client-ID 9a87b414599044c' } }
     ).success(function (data) {
         $scope.album = data.data;
+        $scope.album.images.forEach(function (image) {
+            image.selected = true;
+        });
     });
 
     $scope.update = function (albumid) {
