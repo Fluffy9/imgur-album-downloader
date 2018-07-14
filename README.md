@@ -3,7 +3,7 @@ Imgur Album Downlaoder
 
 A Pure JS webapp to download entire or parts of Imgur albums.
 
-Go to http://dschep.github.io/imgur-album-downloader to use it!
+A clone of this: http://dschep.github.io/imgur-album-downloader
 
 Note: Large albums or albums containing very high resolution photos
 might not work, depending on how much RAM your system has. You can
