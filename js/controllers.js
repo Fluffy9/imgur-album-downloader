@@ -23,6 +23,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         $scope.album.images.forEach(function (image) {
             image.selected = true;
         });
+        $scope.preserveFileOrder = true;
     });
 
     $scope.update = function (albumid) {
