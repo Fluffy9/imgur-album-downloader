@@ -77,7 +77,8 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         });
     };
 }
-
+    $scope.select_all = select_all;
+    $scope.download = download;
 function LandingCtrl($scope, $location, $window) {
     $scope.$on('$viewContentLoaded', function (event) {
         $window._gaq.push(['_trackPageview', $location.path()]);
@@ -93,8 +94,7 @@ function LandingCtrl($scope, $location, $window) {
             pos: 800,
             lw: 4
         });
-    $scope.select_all = select_all;
-    $scope.download = download;
+    
     $scope.update = function (albumid) {
         $location.path('/' + $scope.albumid);
     };
