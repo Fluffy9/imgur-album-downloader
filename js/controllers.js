@@ -73,8 +73,8 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
                             $scope.progress = 'progress active striped';
                             var blob = zip.generate({ type: 'blob' });
                             $scope.progress = 'progress';
-                            $scope.dl_link = window.URL.createObjectURL(blob);
-                            //location.href = window.URL.createObjectURL(blob);
+                            //$scope.dl_link = window.URL.createObjectURL(blob);
+                            location.href = window.URL.createObjectURL(blob);
                         }
                     });
                 }
