@@ -11,6 +11,10 @@ download whole albums natively on Imgur by appending `/zip` to the URL.
 
 This is modified to work embedded on your website. It automatically downloads an album when the album id is provided and downloads it to the user's computer. You can embed the link to the album in your website as a hidden iframe. If you want to add a loading bar, the child iframe posts a message to the parent window in the form of "{{ Currently Downloaded Pages }}/{{ Total Pages }}"
 
+# Live Example
+
+[JsFiddle](http://jsfiddle.net/pseovftL/8/)
+
 # How to Use
 
 You will need JQuery and Bootstrap for this tutorial
@@ -60,7 +64,7 @@ iframe javascript
 			//Show the download progress bar
 			$("#download_bar").show();
 			//Create the iframe. Replace {{ imgurid }} with your imgur album id
-			var iframe = $("<iframe />",{ src: "https://fluffy9.github.io/imgur-album-downloader/{{ imgurid }}", style: "width:100%; display:none"}).appendTo("body");
+			var iframe = $("<iframe />",{ src: "https://fluffy9.github.io/imgur-album-downloader/#/{{ imgurid }}", style: "width:100%; display:none"}).appendTo("body");
 			iframe.ready(function(){
 				
 			});
