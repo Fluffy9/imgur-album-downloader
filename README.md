@@ -41,6 +41,15 @@ Fork this code and open controller.js. Please change the client id to your own. 
 
 ## Create the Iframe:
 
+Download button sample html
+
+```
+<a id="download" class="source" style="color: var(--color3)" href="#"><span>[Source 1]</span></a>
+
+``` 
+
+iframe javascript
+
 ```
 	$( document ).ready(function() {
 		
