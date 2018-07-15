@@ -15,7 +15,7 @@ This is modified to work embedded on your website. It automatically downloads an
 
 You will need JQuery and Bootstrap for this tutorial
 
-##Create the Iframe:
+## Create the Iframe:
 
 ```
 	$( document ).ready(function() {
@@ -36,9 +36,9 @@ You will need JQuery and Bootstrap for this tutorial
 
 ```
 
-##Adding a bootstrap progress bar:
+## Adding a bootstrap progress bar:
 
-Sample HTMl
+Sample HTML
 
 ```
 <div style="padding-top:5px;">
