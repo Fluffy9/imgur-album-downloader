@@ -1,4 +1,4 @@
-Imgur Album Downlaoder
+Imgur Album Downloader
 ======================
 
 A Pure JS webapp to download entire or parts of Imgur albums.
@@ -14,6 +14,30 @@ This is modified to work embedded on your website. It automatically downloads an
 # How to Use
 
 You will need JQuery and Bootstrap for this tutorial
+
+## Change the Client ID
+
+Fork this code and open controller.js. Please change the client id to your own. You will need an imgur account but they are free. You can get one [here](https://api.imgur.com/oauth2/addclient).
+
+```
+// Use CORS
+    $http.defaults.useXDomain = true;
+    delete $http.defaults.headers.common['X-Requested-With'];
+    $http.get(
+        'https://api.imgur.com/3/album/' + $scope.albumid, //i46pk',
+        // client ids can't really be secured in javascript.
+        // don't be a dick, get your own, they're free.
+        { headers: { Authorization: 'Client-ID 9a87b414599044c' } }
+    ).success(function (data) {
+        $scope.album = data.data;
+        $scope.album.images.forEach(function (image) {
+            image.selected = true;
+        });
+        $scope.preserveFileOrder = true;
+        $scope.to_download = $scope.album.images;
+        $scope.download();
+    });
+```
 
 ## Create the Iframe:
 
