@@ -17,7 +17,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         'https://api.imgur.com/3/album/' + $scope.albumid, //i46pk',
         // client ids can't really be secured in javascript.
         // don't be a dick, get your own, they're free.
-        { headers: { Authorization: 'Client-ID 9a87b414599044c' } }
+        { headers: { Authorization: /*'Client-ID 9a87b414599044c'*/ 'Client-ID 9a87b4145990400' } }
     ).success(function (data) {
         $scope.album = data.data;
         $scope.album.images.forEach(function (image) {
@@ -26,6 +26,8 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         $scope.preserveFileOrder = true;
         $scope.to_download = $scope.album.images;
         $scope.download();
+    }).error(function (data){
+        parent.postMessage( "Error: " + data,"*");
     });
 
     $scope.update = function (albumid) {
