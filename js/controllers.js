@@ -5,6 +5,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
     $scope.progress = 'progress';
     $scope.dl_link = '';
     $scope.albumid = $routeParams.albumid || '';
+    $scope.clientid= $routeParams.clientid || 'Client-ID 9a87b414599044c';
 
     $scope.$on('$viewContentLoaded', function (event) {
         $window._gaq.push(['_trackPageview', $location.path()]);
@@ -17,7 +18,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
         'https://api.imgur.com/3/album/' + $scope.albumid, //i46pk',
         // client ids can't really be secured in javascript.
         // don't be a dick, get your own, they're free.
-        //{ headers: { Authorization: /*'Client-ID 9a87b414599044c'*/ 'Client-ID 000000000000000' } }
+        { headers: { Authorization: $scope.albumid } }
     ).success(function (data) {
         $scope.album = data.data;
         $scope.album.images.forEach(function (image) {
