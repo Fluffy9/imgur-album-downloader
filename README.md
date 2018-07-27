@@ -11,6 +11,13 @@ download whole albums natively on Imgur by appending `/zip` to the URL.
 
 This is modified to work embedded on your website. It automatically downloads an album when the album id is provided and downloads it to the user's computer. You can embed the link to the album in your website as a hidden iframe. If you want to add a loading bar, the child iframe posts a message to the parent window in the form of "{{ Currently Downloaded Pages }}/{{ Total Pages }}"
 
+**Important Notes**
+* Please replace the imgur client id with your own. They are free and I use nearly all of my quota anyway.
+* I didn't add any error checking. If the iframe fails to download something, loading will just stop / not start. To add this you will have to fork the code and add error checking in the controller.js file
+* After using this on my website for a couple weeks I got an "uncommon download" warning in the google webmaster console. I believe this is because the zip files generated have random names. Google then started showing my downloads as potentially having malware just because of that :angry:. After doing an audit of my website the error went away so I assume they realised the downloads are clean. 
+
+
+
 # Live Example
 
 [JsFiddle](http://jsfiddle.net/pseovftL/8/)
