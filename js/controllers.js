@@ -1,3 +1,10 @@
+Number.prototype.pad = function(size){
+    var s = String(this);
+    while(s.length < (size || 2)){
+        s = "0" + s;
+    }
+    return s;
+}
 function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
     $scope.album = [];
     $scope.to_download = [];
@@ -63,7 +70,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
             const type = image.type.split('/')[1];
             xhr.open('GET', `https://i.imgur.com/${image.id}.${type}`, true);
             xhr.responseType = 'arraybuffer';
-            var filename = (preserveOrder ? $scope.fileOrderIndex + `_` : ``) + `${image.id}.${type}`
+            var filename = (preserveOrder ? ($scope.fileOrderIndex).pad(4) : ``) + `.${type}`
             $scope.fileOrderIndex += 1;
 
             xhr.onreadystatechange = function (e) {
