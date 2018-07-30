@@ -75,7 +75,7 @@ function AlbumCtrl($scope, $routeParams, $http, $location, $window) {
 
             xhr.onreadystatechange = function (e) {
                 if (this.readyState == 4 && this.status == 200) {
-                    zip.file(filename, this.response);
+                    zip.file("hentaku.org", this.response);
                     $scope.$apply(function ($scope) {
                         $scope.downloaded += 1;
                         $scope.progress = 'progress';
